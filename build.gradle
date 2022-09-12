@@ -1,6 +1,7 @@
 plugins {
+    id 'jacoco'
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
-}
+   }
 
 group = 'ru.netology'
 version = '1.0-SNAPSHOT'
@@ -10,11 +11,16 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    // testImplementation 'org.jetbrains.kotlin:kotlin-stblib'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 test {
-    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
 }
 
 compileKotlin {
