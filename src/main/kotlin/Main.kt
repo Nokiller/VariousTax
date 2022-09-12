@@ -1,7 +1,5 @@
-val amount = 1_000_000 // Сумма перевода в копейках
-
 fun main() {
-    println("Комиссия за перевод $amount коп. составит: ${tax(amount = amount)} коп.")
+   println("Комиссия за перевод 1_000_000 коп. составит: ${tax(amount = 1_000_000)} коп.")
 }
 
 fun tax(typeOfBill: String = "VkPay", amountTransferOfCurrentMonth: Int = 0, amount: Int): Int {
