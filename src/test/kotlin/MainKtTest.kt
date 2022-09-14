@@ -4,18 +4,7 @@ import org.junit.Assert.*
 
 class MainKtTest {
 
-    @Test
-    fun main() {
-        //arrange
-        val amount = 1_000_000 // Сумма перевода в копейках
 
-        //act
-       val result = "Комиссия за перевод $amount коп. составит: ${tax(amount = amount)} коп."
-
-        //assert
-        assertEquals("Комиссия за перевод 1000000 коп. составит: 0 коп.", result)
-
-    }
     @Test
     fun tax_DefaultTypeOfBill() {
 
@@ -29,12 +18,13 @@ class MainKtTest {
         assertEquals(0, result)
     }
 
+
     @Test
-    fun tax_RandomTypeOfBillCase() {
+    fun tax_WithoutTypeOfBillName() {
 
         //arrange
         val amount = 1_000_000 // Сумма перевода в копейках
-        val typeOfBill = "1111" // Тип карты/счета
+        val typeOfBill = "" // Тип карты/счета
 
         //act
         val result = tax(typeOfBill = typeOfBill, amount = amount)
@@ -42,7 +32,6 @@ class MainKtTest {
         //assert
         assertEquals(0, result)
     }
-
     @Test
     fun tax_VkPayCase() {
 
