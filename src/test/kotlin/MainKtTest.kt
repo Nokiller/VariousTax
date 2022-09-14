@@ -30,7 +30,7 @@ class MainKtTest {
         val result = tax(typeOfBill = typeOfBill, amount = amount)
 
         //assert
-        assertEquals(1, result)
+        assertEquals(0, result)
     }
     @Test
     fun tax_VkPayCase() {
@@ -43,7 +43,7 @@ class MainKtTest {
         val result = tax(typeOfBill = typeOfBill, amount = amount)
 
         //assert
-        assertEquals(0, result)
+        assertEquals(1, result)
     }
 
 
